@@ -1,0 +1,32 @@
+package kr.co.fastcampus.eatgo.eatgo.application;
+
+import kr.co.fastcampus.eatgo.application.MenuItemService;
+import kr.co.fastcampus.eatgo.domain.MenuItem;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@SpringBootTest
+class MenuItemServiceTests {
+
+    @Autowired
+    MenuItemService menuItemService;
+
+    @Test
+    public void bulkUpdate(){
+        List<MenuItem> menuItemList = new ArrayList<>();
+
+        menuItemList.add(MenuItem.builder().name("Ramen").build());
+        menuItemList.add(MenuItem.builder().name("Beef").build());
+
+        menuItemService.bulkUpdate(3L, menuItemList);
+
+
+
+    }
+
+
+}
